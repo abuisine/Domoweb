@@ -1,0 +1,10 @@
+[
+	{ "id": "bebe", "Name": "Chambre de Johann", "Category": "In" },
+	{ "id": "parents", "Name": "Chambre des parents", "Category": "In" },
+	{ "id": "sejour", "Name": "Sejour", "Category": "In" },
+	{ "id": "veranda", "Name": "Veranda", "Category": "In" },
+	{ "id": "dehors", "Name": "A l'ombre", "Category": "Out" },
+	{ "id": "toit", "Name": "Sous le toit", "Category": "Info" },
+	{ "id": "cave", "Name": "Cave", "Category": "Info" },
+	{ "id": "serre", "Name": "Serre", "Category": "Info" }
+]

@@ -1,0 +1,11 @@
+[
+	{ "id": "X", "utctimestamp": "1299926840", "category": "light", "label": "RDC on"},
+	{ "id": "Y", "utctimestamp": "1299926839", "category": "light", "label": "RDC off"},
+	{ "id": "Z", "utctimestamp": "1299926838", "category": "light", "label": "RDC zob"},
+	{ "id": "X", "utctimestamp": "1299926837", "category": "light", "label": "RDC truc"},
+	{ "id": "X", "utctimestamp": "1299926836", "category": "light", "label": "RDC down"},
+	{ "id": "X", "utctimestamp": "1299926835", "category": "light", "label": "RDC tic"},
+	{ "id": "X", "utctimestamp": "1299926834", "category": "light", "label": "RDC tac"},
+	{ "id": "X", "utctimestamp": "1299926833", "category": "light", "label": "RDC "},
+	{ "id": "X", "utctimestamp": "1299926832", "category": "light", "label": "RDC OMG"}
+]

@@ -1,0 +1,81 @@
+	   body {
+	       background-color: #000000;
+	   }
+	   .x-tabpanel > .x-panel-body .x-panel-body {
+	       #padding: 100px 0;
+	       #text-align: center;
+	       #font-size: 72px;
+	       #font-weight: bold;
+	       #color: rgba(0,0,0,.2);
+	       #text-shadow: rgba(255,255,255,.2) 0 1px 0;
+	       #padding: 100px 15%;
+	   }
+	   .x-phone .x-tabpanel > .x-panel-body .x-panel-body {
+	       #padding: 30px 20px;
+	       #font-size: 36px;
+	   }
+	   .x-phone p {
+	       #font-size: 16px;
+	       #line-height: 18px;
+	   }
+	.x-list .x-list-group-items > *.x-item-selected, .x-list.x-list-flat .x-list-parent > *.x-item-selected {
+		#background-image: -webkit-gradient(linear, 0% 0, 0% 100%, from(#7FB6E7), color-stop(0.02, #2986D6), to(#1D5E96));
+		#border-bottom-color: #103656;
+		#border-top-color: #195081;
+		background-image: -webkit-gradient(linear, 0% 0, 0% 100%, from(#88E57E), color-stop(0.02, #40D32A), to(#29931D));
+		border-bottom-color: #16540F;
+		border-top-color: #237F19;
+	}
+	   h1 {
+	       font-weight: bold;
+	   }
+	   p {
+	       font-size: 24px;
+	       line-height: 30px;
+	   }
+	   .card1 .x-panel-body {
+	       background-color: #ccc;
+	   }
+	   .card2 .x-panel-body {
+	   }
+	.houseelementloading {
+		position: absolute;
+		right: 0.9em;
+		top: 0.5em;
+	}
+	.red {
+		background-image: -webkit-gradient(linear, 0% 0, 0% 100%, from(#AF0000), to(#000000));
+		#-webkit-border-radius: 20px;
+		#border: 5px solid #000;
+		width: 100%;
+	}
+	.blue {
+		background-image: -webkit-gradient(linear, 0% 0, 0% 100%, from(#0000AF), to(#000000));
+		width: 100%;
+	}
+	   .card3 .x-panel-body {
+	       background-color: #759E60;
+	   }
+	   .card4 .x-panel-body {
+	       background-color: #9C744F;
+	   }
+	   .card5 .x-panel-body {
+	       background-color: #926D9C;
+	   }
+.action-loading {
+  background: rgba(0,0,0,.3) url(../img/action-loading.gif) center center no-repeat;
+  display: block;
+  width: 10em;
+  height: 10em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -5em;
+  margin-top: -5em;  
+  -webkit-border-radius: .5em;
+  color: #fff;
+  text-shadow: #000 0 1px 1px;
+  text-align: center;
+  padding-top: 8em;
+  font-weight: bold;
+}

@@ -1,0 +1,10 @@
+[
+	{ "id": "modbus.1", "Name": "Entree", "Category": "Maison RDC" },
+	{ "id": "modbus.3", "Name": "Sejour", "Category": "Maison RDC" },
+	{ "id": "modbus.9", "Name": "Couloir", "Category": "Maison 1er" },
+	{ "id": "modbus.11", "Name": "Cage d'escalier", "Category": "Maison 2eme" },
+	{ "id": "modbus.0", "Name": "Terrasse", "Category": "Jardin" },
+	{ "id": "modbus.4", "Name": "Terrain maison", "Category": "Jardin" },
+	{ "id": "modbus.8", "Name": "Cave", "Category": "Cave" },
+	{ "id": "modbus.7", "Name": "Cave a vin", "Category": "Cave" }
+]
