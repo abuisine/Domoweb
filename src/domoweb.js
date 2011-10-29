@@ -16,11 +16,11 @@ Ext.setup({
             fullscreen: true,
 	    layout: 'fit',
             ui: 'dark',
-            cardSwitchAnimation: {
-		type: 'slide',
-                direction: 'up',
-                cover: true
-            },
+//            cardSwitchAnimation: {
+//		type: 'slide',
+//              direction: 'up',
+//              cover: true
+//            },
             
             defaults: {
                 scroll: 'vertical'

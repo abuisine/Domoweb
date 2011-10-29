@@ -28,7 +28,8 @@ function stop($parser, $name) {
 			xml_set_character_data_handler($parser, FALSE);
 			break;
 		case "T":
-			$row = array_merge($row, array("name" => date("D H:m", $char)));
+			$row = array_merge($row, array("name" => date("D H:i", $char)));
+			$row = array_merge($row, array("timestamp" => $char));
 			break;
 		case "V":
 			if ($char == "NaN")
@@ -55,7 +56,10 @@ foreach($rooms as $room) {
 $DEFS .= " DEF:mode=/volume1/web/domoweb/rrd/src/heater/thermostat.rrd:mode:MAX DEF:request=/volume1/web/domoweb/rrd/src/heater/thermostat.rrd:request:AVERAGE";
 $CDEFS = " CDEF:heatermode=mode,10,*";
 $XPORTS .= " XPORT:request XPORT:heatermode";
-exec("/usr/syno/bin/rrdtool xport --start now-1".$_REQUEST['backlog']." --end now --step ".$_REQUEST['step'].$DEFS.$CDEFS.$XPORTS, $data);
+$cmdline = "/usr/syno/bin/rrdtool xport --start now-1".$_REQUEST['backlog']." --end now --step ".$_REQUEST['step'].$DEFS.$CDEFS.$XPORTS;
+if ($_REQUEST['debug'] == "true")
+	print_r($cmdline);
+exec($cmdline, $data);
 for($i = 0; $i < count($morerooms) + 1; $i++) {
 	array_shift($data);
 }
@@ -69,6 +73,17 @@ foreach($data as $line) {
 xml_parse($parser, "", TRUE);
 xml_parser_free($parser);
 
+if ($_REQUEST['debug'] == "true")
+{
+	print("<TABLE>");
+	foreach($rows as $row) {
+		print("<TR><TD>");
+		print_r($row);
+		print_r("</TD></TR>");
+	}
+	print("</TABLE>");
+	print_r("<BR/><H1>JSON</H1><BR/>");
+}
 print_r(json_encode($rows));
 
 ?>

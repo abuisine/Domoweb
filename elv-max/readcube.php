@@ -7,6 +7,21 @@ $cube = array();
 $config = array();
 $devices= array();
 
+function array_print($array) {
+	print("<TABLE BORDER=1><TR>\n");
+	foreach($array as $k => $v) {
+		if (is_array($v)) {
+			print("<TD><TABLE BORDER=1><TR><TD ROWSPAN=".(count($v)+1).">".$k."</TD></TR>\n");
+			foreach($v as $vk => $vv) {
+				print("\t<TR><TD>".$vk."</TD><TD>".$vv."</TD></TR>\n");	
+			}	
+			print("</TR></TABLE>");
+		} else 
+			print("</TR><TD>".$k."</TD><TD>".$v."</TD><TR>\n");	
+	}
+	print("</TR></TABLE></BR>\n");
+} 
+
 function elv_message_parse($message) {
 	$pack = split(":", $message, 2);
 	switch ($pack[0]) {
@@ -32,27 +47,22 @@ function elv_mp_H($message) {
 
 function elv_mp_L($message) {
 	global $devices;
-	$message = bin2hex($message);
-	$pack = str_split($message, 32);
+	$pack = str_split(bin2hex(base64_decode($message)), 24);
 	$d = array();
 	foreach($pack as $line) {
-		print("DDD|".$line."|DDD");
-		if (strlen($line) == 16) {
-			print($line);
-			sscanf($line, "%2s%6s%2s%2s%2s%2s%2s%4s%2s",
-				$d['A'],
-				$d['rf_address'],
-				$d['B'],
-				$d['return_code'],
-				$d['status'],
-				$d['current_temp'],
-				$d['set_temp'],
-				$d['date_until'],
-				$d['time_until']);
-			//$d['current_temp'] = hexdec($d['current_temp'])/2;
-			//$d['set_temp'] = hexdec($d['set_temp'])/2;
-			$devices[$d['rf_address']] = $d;
-		}
+		sscanf($line, "%2s%6s%2s%2s%2s%2s%2s%4s%2s",
+			$d['A'],
+			$d['rf_address'],
+			$d['B'],
+			$d['return_code'],
+			$d['status'],
+			$d['valve_percent'],
+			$d['set_temp'],
+			$d['date_until'],
+			$d['time_until']);
+		$d['valve_percent'] = hexdec($d['valve_percent']);
+		$d['set_temp'] = hexdec($d['set_temp']) / 2.0;
+		$devices[$d['rf_address']] = $d;
 	}
 }
 
@@ -87,7 +97,8 @@ while(TRUE) {
 	if ($buf[0] == "L")
 		break;
 }
-print_r($devices);
+array_print($cube);
+array_print($devices);
 socket_close($s);
 ?>
 </HTML>
